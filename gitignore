@@ -1,0 +1,25 @@
+#### Folder Rules ####
+
+.vs/
+bin/
+Build/Output/
+obj/
+packages/
+wwwroot/
+
+
+#### Filetype Rules ####
+
+*.coverage
+*.DotSettings
+*.jtconfig
+*.log
+*.nupkg
+*.obj
+*.orig
+*.PARAFFIN
+*.pubxml
+*.rej
+*.suo
+*.user
+*.zip
