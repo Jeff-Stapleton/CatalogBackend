@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using CatalogBackend.Data;
 using CatalogBackend.Data.Models;
 using Microsoft.AspNetCore.Mvc;
