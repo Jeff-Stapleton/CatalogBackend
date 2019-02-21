@@ -26,7 +26,7 @@ namespace CatalogBackend.Controllers
         [HttpPost]
         public void Post([FromBody]ProductModel newProduct)
         {
-            productService.Create(newProduct);
+            productService.Create(ModelState, newProduct);
         }
     }
 }

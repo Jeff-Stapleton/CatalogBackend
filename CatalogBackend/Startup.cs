@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using CatalogBackend.Data;
+using CatalogBackend.Exceptions;
 using CatalogBackend.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,7 +22,11 @@ namespace CatalogBackend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(options =>
+            {
+                options.ReturnHttpNotAcceptable = true;
+                options.Filters.Add(new ExceptionFilter());
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddMvcCore()
                 .AddCors(options =>
                 {

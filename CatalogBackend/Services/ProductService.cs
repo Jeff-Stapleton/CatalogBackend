@@ -1,6 +1,8 @@
 ﻿using CatalogBackend.Data.Models;
 using CatalogBackend.Services;
 using System.Collections.Generic;
+using CatalogBackend.Exceptions;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 
 namespace CatalogBackend.Data
@@ -14,12 +16,19 @@ namespace CatalogBackend.Data
             this.productRepository = productRepository;
         }
 
-        public void Create(ProductModel newProduct)
+        public void Create(ModelStateDictionary modelState, ProductModel newProduct)
         {
-            if (Read(newProduct.name) == null)
+            if (modelState.IsValid && Read(newProduct.name) != null)
             {
-                productRepository.Insert(newProduct);
+                modelState.AddModelError(nameof(ProductModel.name), "Product name must be unique");
             }
+
+            if (modelState.IsValid == false)
+            {
+                throw new ValidationFailureException(modelState);
+            }
+
+            productRepository.Insert(newProduct);
         }
 
         public List<ProductModel> Read()
