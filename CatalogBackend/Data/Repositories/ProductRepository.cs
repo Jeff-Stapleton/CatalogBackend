@@ -30,6 +30,11 @@ namespace CatalogBackend.Services
             new ProductModel{name="Product 20", description="This is a description of product number 20", quantity=20},
         };
 
+        public ProductRepository()
+        {
+
+        }
+
         public List<ProductModel> GetAll()
         {
             return Products;

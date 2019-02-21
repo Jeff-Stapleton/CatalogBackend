@@ -12,7 +12,7 @@ namespace CatalogBackend.Controllers
     {
         private readonly ProductService productService;
 
-        ProductController(ProductService productService)
+        public ProductController(ProductService productService)
         {
             this.productService = productService;
         }

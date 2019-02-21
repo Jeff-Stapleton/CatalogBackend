@@ -9,7 +9,7 @@ namespace CatalogBackend.Data
     {
         private readonly ProductRepository productRepository;
 
-        ProductService(ProductRepository productRepository)
+        public ProductService(ProductRepository productRepository)
         {
             this.productRepository = productRepository;
         }
