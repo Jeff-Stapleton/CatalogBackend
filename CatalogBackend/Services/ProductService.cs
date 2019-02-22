@@ -1,11 +1,10 @@
-﻿using CatalogBackend.Data.Models;
-using CatalogBackend.Services;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using CatalogBackend.Data.Models;
+using CatalogBackend.Data.Repositories;
 using CatalogBackend.Exceptions;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-
-namespace CatalogBackend.Data
+namespace CatalogBackend.Services
 {
     public class ProductService
     {

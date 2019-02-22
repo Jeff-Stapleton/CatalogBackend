@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using CatalogBackend.Data;
+using CatalogBackend.Data.Repositories;
 using CatalogBackend.Exceptions;
 using CatalogBackend.Services;
 using Microsoft.AspNetCore.Builder;

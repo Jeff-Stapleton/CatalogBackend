@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using CatalogBackend.Data;
 using CatalogBackend.Data.Models;
+using CatalogBackend.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatalogBackend.Controllers
